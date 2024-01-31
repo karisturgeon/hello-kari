@@ -1,44 +1,37 @@
 import random
 import math
-# Taking Inputs
-lower = int(input("Enter Lower bound:- "))
- 
-# Taking Inputs
-upper = int(input("Enter Upper bound:- "))
+
+#inputs
+lower = 0
+upper = 25
  
 # generating random number between
 # the lower and upper
 x = random.randint(lower, upper)
-print("\n\tYou've only ", 
-       round(math.log(upper - lower + 1, 2)),
-      " chances to guess the integer!\n")
+print("\n\tyou have 5 chances to guess a number between 0 and 20!\n")
  
 # Initializing the number of guesses.
 count = 0
  
 # for calculation of minimum number of
 # guesses depends upon range
-while count < math.log(upper - lower + 1, 2):
+while count < 5:
     count += 1
  
     # taking guessing number as input
-    guess = int(input("Guess a number:- "))
+    guess = int(input("guess a number:  "))
  
     # Condition testing
     if x == guess:
-        print("Congratulations you did it in ",
-              count, " try")
+        print("you won")
         # Once guessed, loop will break
         break
     elif x > guess:
-        print("You guessed too small!")
+        print("too small!")
     elif x < guess:
-        print("You Guessed too high!")
+        print("too high!")
  
 # If Guessing is more than required guesses,
 # shows this output.
-if count >= math.log(upper - lower + 1, 2):
-    print("\nThe number is %d" % x)
-    print("\tBetter Luck Next time!")
- 
-# Better to use This source Code on pycharm!
+if count >= 5:
+    print("\nthe number was %d" % x)
